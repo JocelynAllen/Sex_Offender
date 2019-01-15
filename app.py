@@ -1,4 +1,12 @@
-from flask import Flask, jsonify, render_template
+
+# 
+from flask import (
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect)
+
 app = Flask(__name__)
 
 
@@ -6,6 +14,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/maps")
-def index():
-    return render_template('maps.html')
+@app.route("/map")
+def map():
+    return render_template("index.html")
+
+
+# @app.route("/")
+# def home():
+#     return "Welcome!"
+
+if __name__ == '__main__':
+   app.run(debug = True)
